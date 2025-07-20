@@ -1,0 +1,116 @@
+Test Cases - Simple Calculator
+
+POSITIVE SCENARIOS
+Scenario 1: Go to Simple Calculator page - LOW
+GIVEN I am a user
+WHEN user proceeds to URL: https://testpages.eviltester.com/styled/calculator
+THEN user should see Simple Calculator page
+AND user should see Page Navigation (Index, Page, About)
+
+Scenario 2: Add Two Numbers
+GIVEN user is on the Simple Calculator page
+WHEN user inputs a valid number on the textfield 1
+AND user inputs a valid number on the textfield 2
+AND user selects Plus dropwdown option
+AND user clicks Calculate button
+THEN user should see correct computed amount in Answer result
+
+Scenario 3: Multiply Two Numbers
+GIVEN user is on the Simple Calculator page
+WHEN user inputs a valid number on the textfield 1
+AND user inputs a valid number on the textfield 2
+AND user selects Times dropwdown option
+AND user clicks Calculate button
+THEN user should see correct computed amount in Answer result
+
+Scenario 4: Subtract Two Numbers
+GIVEN user is on the Simple Calculator page
+WHEN user inputs a valid number on the textfield 1
+AND user inputs a valid number on the textfield 2
+AND user selects Minus dropwdown option
+AND user clicks Calculate button
+THEN user should see correct computed amount in Answer result
+
+Scenario 5: Divide Two Numbers
+GIVEN user is on the Simple Calculator page
+WHEN user inputs a valid number on the textfield 1
+AND user inputs a valid number on the textfield 2
+AND user selects Divide dropwdown option
+AND user clicks Calculate button
+THEN user should see correct computed amount in Answer result
+
+Scenario 6: User double click Calculate button
+GIVEN user is on the Simple Calculator page
+WHEN user inputs a valid number on the textfield 1
+AND user inputs a valid number on the textfield 2
+AND user selects Plus/Times/Minus/Divide dropwdown option
+AND user clicks Calculate button
+AND user clicks again the Calculate button
+THEN user should see correct computed amount in Answer result
+AND computed amount should NOT be incremented
+
+Scenario 7: Go to About page
+GIVEN user is on the Simple Calculator page
+WHEN user clicks About navigation 
+THEN user should be redirected to Practice Applications and Pages For Automating and Testing page
+AND user should see sets of applications and example pages for practicing Automation
+
+Scenario 8: Go to Index page
+GIVEN user is on the Simple Calculator page
+WHEN user clicks Index navigation 
+THEN user should be redirected to About page
+AND user should see set of pages to use for practicing automating or testing
+
+Scenario 9: Go to Related Sites page
+GIVEN user is on the Simple Calculator page
+WHEN user clicks Related Sites navigation 
+THEN user should be redirected to Other Practice Sites page
+AND user should see listed a few other sites
+
+Scenario 10: Go to About page
+GIVEN user is on the Simple Calculator page
+WHEN user clicks About navigation 
+THEN user should be redirected to About Simple Calculator page
+
+NEGATIVE SCENARIOS
+Scenario 11: User Calculate with empty values
+GIVEN user is on the Simple Calculator page
+AND no values inputted on the textfields
+WHEN user clicks Calculate button
+THEN user should see Answer: ERR result
+
+Scenario 12: User Calculate with missing value in the textfield 1
+GIVEN user is on the Simple Calculator page
+WHEN user leaves textfield 1 with NO value
+AND user inputs a valid number on the textfield 2
+AND user clicks Calculate button
+THEN user should see Answer: ERR result
+
+Scenario 13: User Calculate with missing value in the textfield 2
+GIVEN user is on the Simple Calculator page
+WHEN user inputs a valid number on the textfield 1
+AND user leaves textfield 2 with NO value
+AND user clicks Calculate button
+THEN user should see Answer: ERR result
+
+Scenario 14: User Calculate with invalid value in the textfield 1
+GIVEN user is on the Simple Calculator page
+WHEN user inputs an invalid number on the textfield 1
+AND user inputs a valid number on the textfield 2
+AND user clicks Calculate button
+THEN user should see Answer: ERR result
+
+Scenario 15: User Calculate with invalid value in the textfield 2
+GIVEN user is on the Simple Calculator page
+WHEN user inputs a valid number on the textfield 1
+AND user inputs an invalid number on the textfield 2
+AND user clicks Calculate button
+THEN user should see Answer: ERR result
+
+Scenario 16: User Calculate with invalid value in the textfield 1 and 2
+GIVEN user is on the Simple Calculator page
+WHEN user inputs an invalid number on the textfield 1
+AND user inputs an invalid number on the textfield 2
+AND user clicks Calculate button
+THEN user should see Answer: ERR result
+

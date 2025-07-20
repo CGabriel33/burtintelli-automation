@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-07-20T15:09:27.389879" rpa="false" schemaversion="5">
+<suite id="s1" name="Simple Calculator" source="/Users/camillegabriel/Documents/Automation/burtintelli-automation/tests/acceptance/simple_calculator.robot">
+<test id="s1-t1" name="Open Simple Calculator website" line="13">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:27.476807" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/camillegabriel/Documents/Automation/burtintelli-automation/browser/traces/temp/84bd13e0-f0f2-4f3b-9c1b-e06d4daf84d0"}</msg>
+<msg time="2025-07-20T15:09:27.491609" level="INFO">Starting Browser process /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js using at 127.0.0.1:55714</msg>
+<msg time="2025-07-20T15:09:28.949710" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/camillegabriel/Documents/Automation/burtintelli-automation/browser/traces/temp/84bd13e0-f0f2-4f3b-9c1b-e06d4daf84d0"}</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:27.476485" elapsed="1.473448"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:30.732027" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:30.732153" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:28.950429" elapsed="1.781946"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:27.476136" elapsed="3.256445"/>
+</kw>
+<kw name="Validate Simple Calculator page" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:30.767179" level="INFO">Waited for Element with selector xpath=//h1[contains(.,'Simple Calculator')] at state visible</msg>
+<arg>${header}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.733654" elapsed="0.033697"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:30.788800" level="INFO">Text: 'Simple Calculator'</msg>
+<msg time="2025-07-20T15:09:30.789006" level="INFO">${text} = Simple Calculator</msg>
+<var>${text}</var>
+<arg>${header}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.767541" elapsed="0.021486"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:30.789580" level="INFO">${text} = Simple Calculator</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.789227" elapsed="0.000372"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Simple Calculator</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.789693" elapsed="0.000151"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:30.733070" elapsed="0.056840"/>
+</kw>
+<kw name="Validate Page Navigations" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:30.793505" level="INFO">Waited for Element with selector xpath=//a[contains(.,'Index')] at state visible</msg>
+<arg>${nav_index}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.790261" elapsed="0.003330"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${nav_index}</arg>
+<arg>Index</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.793701" elapsed="0.000167"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:30.796745" level="INFO">Waited for Element with selector xpath=//a[contains(.,'Page')] at state visible</msg>
+<arg>${nav_page}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.793941" elapsed="0.002877"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${nav_page}</arg>
+<arg>Page</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.796911" elapsed="0.000138"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:30.799964" level="INFO">Waited for Element with selector xpath=//a[contains(.,'About')] at state visible</msg>
+<arg>${nav_about}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.797117" elapsed="0.002925"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${nav_about}</arg>
+<arg>About</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.800138" elapsed="0.000147"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:30.790090" elapsed="0.010242"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:30.867975" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.800501" elapsed="0.067560"/>
+</kw>
+<msg time="2025-07-20T15:09:30.874235" level="INFO">Switching context to context=060a5774-3aca-494d-9e95-cdba29e7c822 in CURRENT</msg>
+<msg time="2025-07-20T15:09:30.876709" level="INFO">Successfully changed active context: context=060a5774-3aca-494d-9e95-cdba29e7c822</msg>
+<msg time="2025-07-20T15:09:30.880999" level="INFO">Successfully closed Context</msg>
+<doc>Go to Simple Calculator page</doc>
+<status status="PASS" start="2025-07-20T15:09:27.475776" elapsed="3.392368"/>
+</test>
+<test id="s1-t2" name="Add Two Numbers" line="19">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:30.883094" level="INFO">Switching browser to browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:30.883971" level="INFO">Successfully changed active browser: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:30.884020" level="INFO">Reusing existing browser with id: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.882804" elapsed="0.001246"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:31.892872" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:31.892976" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:30.884129" elapsed="1.009102"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:30.882572" elapsed="1.010795"/>
+</kw>
+<kw name="Input a valid value in textfield one" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:31.918273" level="INFO">Waited for Element with selector xpath=//form//input[@id='number1'] at state visible</msg>
+<arg>${textfield_one}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:31.894128" elapsed="0.024311"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:31.919126" level="INFO">Fills the text '100' in the given field.</msg>
+<arg>${textfield_one}</arg>
+<arg>100</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:31.918617" elapsed="0.023976"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:31.893673" elapsed="0.049024"/>
+</kw>
+<kw name="Input a valid value in textfield two" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:31.946384" level="INFO">Waited for Element with selector xpath=//form//input[@id='number2'] at state visible</msg>
+<arg>${textfield_two}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:31.943190" elapsed="0.003279"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:31.946882" level="INFO">Fills the text '50' in the given field.</msg>
+<arg>${textfield_two}</arg>
+<arg>50</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:31.946575" elapsed="0.003830"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:31.942914" elapsed="0.007571"/>
+</kw>
+<kw name="Click Calculate button" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:31.953494" level="INFO">Waited for Element with selector xpath=//input[@id='calculate'] at state visible</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:31.950840" elapsed="0.002752"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-20T15:09:31.954051" level="INFO">Clicks the element 'xpath=//input[@id='calculate']'.</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:31.953711" elapsed="0.284359"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:31.950639" elapsed="0.287826"/>
+</kw>
+<kw name="Validate Result" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:32.263449" level="INFO">Waited for Element with selector xpath=//span[@id='answer'] at state visible</msg>
+<arg>${result}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:32.239589" elapsed="0.024037"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:32.282218" level="INFO">Text: '150'</msg>
+<msg time="2025-07-20T15:09:32.282356" level="INFO">${text} = 150</msg>
+<var>${text}</var>
+<arg>${result}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:32.263840" elapsed="0.018538"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:32.282815" level="INFO">${text} = 150</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:32.282532" elapsed="0.000304"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${answer}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:32.282924" elapsed="0.000154"/>
+</kw>
+<arg>150</arg>
+<status status="PASS" start="2025-07-20T15:09:32.238994" elapsed="0.044139"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:32.539790" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:32.283316" elapsed="0.256602"/>
+</kw>
+<msg time="2025-07-20T15:09:32.546088" level="INFO">Switching context to context=ad76723b-f096-4b88-be77-3dba67907f16 in CURRENT</msg>
+<msg time="2025-07-20T15:09:32.549069" level="INFO">Successfully changed active context: context=ad76723b-f096-4b88-be77-3dba67907f16</msg>
+<msg time="2025-07-20T15:09:32.553695" level="INFO">Successfully closed Context</msg>
+<doc>User Adds two valid numbers</doc>
+<status status="PASS" start="2025-07-20T15:09:30.881320" elapsed="1.658713"/>
+</test>
+<test id="s1-t3" name="Calculate with empty fields" line="28">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:32.555769" level="INFO">Switching browser to browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:32.556510" level="INFO">Successfully changed active browser: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:32.556556" level="INFO">Reusing existing browser with id: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:32.555445" elapsed="0.001143"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:33.521589" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:33.521693" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:32.556674" elapsed="0.965172"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:32.555195" elapsed="0.966782"/>
+</kw>
+<kw name="Click Calculate button" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:33.546546" level="INFO">Waited for Element with selector xpath=//input[@id='calculate'] at state visible</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:33.522711" elapsed="0.024005"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-20T15:09:33.547427" level="INFO">Clicks the element 'xpath=//input[@id='calculate']'.</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:33.546903" elapsed="0.280226"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:33.522276" elapsed="0.305102"/>
+</kw>
+<kw name="Validate Result" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:33.851868" level="INFO">Waited for Element with selector xpath=//span[@id='answer'] at state visible</msg>
+<arg>${result}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:33.828717" elapsed="0.023410"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:33.870601" level="INFO">Text: 'ERR'</msg>
+<msg time="2025-07-20T15:09:33.870747" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>${result}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:33.852333" elapsed="0.018438"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:33.871210" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:33.870926" elapsed="0.000306"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${answer}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:33.871322" elapsed="0.000174"/>
+</kw>
+<arg>ERR</arg>
+<status status="PASS" start="2025-07-20T15:09:33.828038" elapsed="0.043513"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:34.122447" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:33.871723" elapsed="0.250845"/>
+</kw>
+<msg time="2025-07-20T15:09:34.129212" level="INFO">Switching context to context=eaa90494-be34-4797-bbdc-f9a808e4575c in CURRENT</msg>
+<msg time="2025-07-20T15:09:34.131726" level="INFO">Successfully changed active context: context=eaa90494-be34-4797-bbdc-f9a808e4575c</msg>
+<msg time="2025-07-20T15:09:34.136391" level="INFO">Successfully closed Context</msg>
+<doc>User Calculate with empty values</doc>
+<status status="PASS" start="2025-07-20T15:09:32.553997" elapsed="1.568679"/>
+</test>
+<test id="s1-t4" name="Calculate with missing textfield one" line="34">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:34.138627" level="INFO">Switching browser to browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:34.139452" level="INFO">Successfully changed active browser: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:34.139498" level="INFO">Reusing existing browser with id: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:34.138296" elapsed="0.001233"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:38.125118" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:38.125274" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:34.139618" elapsed="3.985892"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:34.138028" elapsed="3.987683"/>
+</kw>
+<kw name="Input a valid value in textfield two" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:38.156648" level="INFO">Waited for Element with selector xpath=//form//input[@id='number2'] at state visible</msg>
+<arg>${textfield_two}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.126751" elapsed="0.030062"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:38.157554" level="INFO">Fills the text '50' in the given field.</msg>
+<arg>${textfield_two}</arg>
+<arg>50</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.157001" elapsed="0.007853"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:38.126150" elapsed="0.038831"/>
+</kw>
+<kw name="Click Calculate button" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:38.169307" level="INFO">Waited for Element with selector xpath=//input[@id='calculate'] at state visible</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.165543" elapsed="0.003930"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-20T15:09:38.170186" level="INFO">Clicks the element 'xpath=//input[@id='calculate']'.</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.169709" elapsed="0.289521"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:38.165226" elapsed="0.294475"/>
+</kw>
+<kw name="Validate Result" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:38.484553" level="INFO">Waited for Element with selector xpath=//span[@id='answer'] at state visible</msg>
+<arg>${result}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.460709" elapsed="0.024030"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:38.502909" level="INFO">Text: 'ERR'</msg>
+<msg time="2025-07-20T15:09:38.503049" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>${result}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.484959" elapsed="0.018113"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:38.503516" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.503229" elapsed="0.000308"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${answer}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.503625" elapsed="0.000153"/>
+</kw>
+<arg>ERR</arg>
+<status status="PASS" start="2025-07-20T15:09:38.460143" elapsed="0.043690"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:38.755697" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-4.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-4.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.504038" elapsed="0.251786"/>
+</kw>
+<msg time="2025-07-20T15:09:38.762235" level="INFO">Switching context to context=a25e3d86-9aa7-4898-b243-784e007bbb46 in CURRENT</msg>
+<msg time="2025-07-20T15:09:38.764989" level="INFO">Successfully changed active context: context=a25e3d86-9aa7-4898-b243-784e007bbb46</msg>
+<msg time="2025-07-20T15:09:38.769551" level="INFO">Successfully closed Context</msg>
+<doc>User Calculate with missing value in the textfield 1</doc>
+<status status="PASS" start="2025-07-20T15:09:34.136694" elapsed="4.619244"/>
+</test>
+<test id="s1-t5" name="Calculate with missing textfield two" line="41">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:38.771732" level="INFO">Switching browser to browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:38.772496" level="INFO">Successfully changed active browser: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:38.772545" level="INFO">Reusing existing browser with id: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.771402" elapsed="0.001179"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:39.678152" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:39.678258" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:38.772672" elapsed="0.905754"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:38.771145" elapsed="0.907415"/>
+</kw>
+<kw name="Input a valid value in textfield one" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:39.703397" level="INFO">Waited for Element with selector xpath=//form//input[@id='number1'] at state visible</msg>
+<arg>${textfield_one}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:39.679310" elapsed="0.024259"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:39.704299" level="INFO">Fills the text '100' in the given field.</msg>
+<arg>${textfield_one}</arg>
+<arg>100</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:39.703756" elapsed="0.006742"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:39.678859" elapsed="0.031765"/>
+</kw>
+<kw name="Click Calculate button" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:39.714618" level="INFO">Waited for Element with selector xpath=//input[@id='calculate'] at state visible</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:39.711152" elapsed="0.003597"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-20T15:09:39.715261" level="INFO">Clicks the element 'xpath=//input[@id='calculate']'.</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:39.714885" elapsed="0.288310"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:39.710851" elapsed="0.292524"/>
+</kw>
+<kw name="Validate Result" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:40.027683" level="INFO">Waited for Element with selector xpath=//span[@id='answer'] at state visible</msg>
+<arg>${result}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:40.004285" elapsed="0.023585"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:40.045873" level="INFO">Text: 'ERR'</msg>
+<msg time="2025-07-20T15:09:40.046000" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>${result}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:40.028078" elapsed="0.017944"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:40.046444" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:40.046172" elapsed="0.000292"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${answer}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:40.046552" elapsed="0.000154"/>
+</kw>
+<arg>ERR</arg>
+<status status="PASS" start="2025-07-20T15:09:40.003742" elapsed="0.043019"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:40.287427" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-5.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-5.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:40.046938" elapsed="0.240629"/>
+</kw>
+<msg time="2025-07-20T15:09:40.294040" level="INFO">Switching context to context=aae94290-42ac-4d42-bca7-53b72c12d8d0 in CURRENT</msg>
+<msg time="2025-07-20T15:09:40.296769" level="INFO">Successfully changed active context: context=aae94290-42ac-4d42-bca7-53b72c12d8d0</msg>
+<msg time="2025-07-20T15:09:40.301068" level="INFO">Successfully closed Context</msg>
+<doc>User Calculate with missing value in the textfield 2</doc>
+<status status="PASS" start="2025-07-20T15:09:38.769892" elapsed="1.517788"/>
+</test>
+<test id="s1-t6" name="Calculate with invalid value textfield one" line="48">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:40.303400" level="INFO">Switching browser to browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:40.304231" level="INFO">Successfully changed active browser: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:40.304285" level="INFO">Reusing existing browser with id: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:40.303067" elapsed="0.001254"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:41.206420" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:41.206522" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:40.304417" elapsed="0.902272"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:40.302812" elapsed="0.904010"/>
+</kw>
+<kw name="Input an invalid value in textfield one" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:41.231367" level="INFO">Waited for Element with selector xpath=//form//input[@id='number1'] at state visible</msg>
+<arg>${textfield_one}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.207556" elapsed="0.023970"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:41.232211" level="INFO">Fills the text 'abc_123' in the given field.</msg>
+<arg>${textfield_one}</arg>
+<arg>abc_123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.231702" elapsed="0.008858"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:41.207119" elapsed="0.033778"/>
+</kw>
+<kw name="Input a valid value in textfield two" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:41.246058" level="INFO">Waited for Element with selector xpath=//form//input[@id='number2'] at state visible</msg>
+<arg>${textfield_two}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.241491" elapsed="0.004699"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:41.247147" level="INFO">Fills the text '50' in the given field.</msg>
+<arg>${textfield_two}</arg>
+<arg>50</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.246415" elapsed="0.016632"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:41.241131" elapsed="0.022104"/>
+</kw>
+<kw name="Click Calculate button" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:41.285733" level="INFO">Waited for Element with selector xpath=//input[@id='calculate'] at state visible</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.264090" elapsed="0.021830"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-20T15:09:41.289696" level="INFO">Clicks the element 'xpath=//input[@id='calculate']'.</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.286112" elapsed="0.282931"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:41.263586" elapsed="0.305853"/>
+</kw>
+<kw name="Validate Result" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:41.593964" level="INFO">Waited for Element with selector xpath=//span[@id='answer'] at state visible</msg>
+<arg>${result}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.570862" elapsed="0.023292"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:41.611975" level="INFO">Text: 'ERR'</msg>
+<msg time="2025-07-20T15:09:41.612118" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>${result}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.594365" elapsed="0.017775"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:41.612620" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.612316" elapsed="0.000325"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${answer}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.612736" elapsed="0.000154"/>
+</kw>
+<arg>ERR</arg>
+<status status="PASS" start="2025-07-20T15:09:41.570175" elapsed="0.042771"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:41.855757" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-6.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-6.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.613133" elapsed="0.242750"/>
+</kw>
+<msg time="2025-07-20T15:09:41.862127" level="INFO">Switching context to context=f176c2ab-9f80-44f8-988e-3203ea343c1e in CURRENT</msg>
+<msg time="2025-07-20T15:09:41.864575" level="INFO">Successfully changed active context: context=f176c2ab-9f80-44f8-988e-3203ea343c1e</msg>
+<msg time="2025-07-20T15:09:41.868784" level="INFO">Successfully closed Context</msg>
+<doc>User Calculate with invalid value in the textfield 1</doc>
+<status status="PASS" start="2025-07-20T15:09:40.301384" elapsed="1.554615"/>
+</test>
+<test id="s1-t7" name="Calculate with invalid value textfield two" line="56">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:41.871054" level="INFO">Switching browser to browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:41.871823" level="INFO">Successfully changed active browser: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:41.871870" level="INFO">Reusing existing browser with id: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.870726" elapsed="0.001178"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:42.765474" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:42.765570" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:41.871992" elapsed="0.893730"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:41.870478" elapsed="0.895372"/>
+</kw>
+<kw name="Input a valid value in textfield one" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:42.791056" level="INFO">Waited for Element with selector xpath=//form//input[@id='number1'] at state visible</msg>
+<arg>${textfield_one}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:42.766572" elapsed="0.024648"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:42.791908" level="INFO">Fills the text '100' in the given field.</msg>
+<arg>${textfield_one}</arg>
+<arg>100</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:42.791398" elapsed="0.006668"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:42.766143" elapsed="0.032046"/>
+</kw>
+<kw name="Input an invalid value in textfield two" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:42.803101" level="INFO">Waited for Element with selector xpath=//form//input[@id='number1'] at state visible</msg>
+<arg>${textfield_one}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:42.798711" elapsed="0.004540"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:42.803913" level="INFO">Fills the text 'kyc_1' in the given field.</msg>
+<arg>${textfield_one}</arg>
+<arg>kyc_1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:42.803413" elapsed="0.004567"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:42.798412" elapsed="0.009669"/>
+</kw>
+<kw name="Click Calculate button" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:42.811090" level="INFO">Waited for Element with selector xpath=//input[@id='calculate'] at state visible</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:42.808516" elapsed="0.002719"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-20T15:09:42.811714" level="INFO">Clicks the element 'xpath=//input[@id='calculate']'.</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:42.811357" elapsed="0.279643"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:42.808272" elapsed="0.282964"/>
+</kw>
+<kw name="Validate Result" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:43.116037" level="INFO">Waited for Element with selector xpath=//span[@id='answer'] at state visible</msg>
+<arg>${result}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:43.092932" elapsed="0.023297"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:43.134553" level="INFO">Text: 'ERR'</msg>
+<msg time="2025-07-20T15:09:43.134703" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>${result}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:43.116434" elapsed="0.018293"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:43.135213" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:43.134903" elapsed="0.000332"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${answer}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:43.135328" elapsed="0.000156"/>
+</kw>
+<arg>ERR</arg>
+<status status="PASS" start="2025-07-20T15:09:43.092084" elapsed="0.043461"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:43.388932" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-7.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-7.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:43.135724" elapsed="0.253341"/>
+</kw>
+<msg time="2025-07-20T15:09:43.396672" level="INFO">Switching context to context=d780a94c-1cc7-43d7-a79d-ffe059e48b4a in CURRENT</msg>
+<msg time="2025-07-20T15:09:43.402788" level="INFO">Successfully changed active context: context=d780a94c-1cc7-43d7-a79d-ffe059e48b4a</msg>
+<msg time="2025-07-20T15:09:43.406608" level="INFO">Successfully closed Context</msg>
+<doc>User Calculate with invalid value in the textfield 2</doc>
+<status status="PASS" start="2025-07-20T15:09:41.869110" elapsed="1.520064"/>
+</test>
+<test id="s1-t8" name="Calculate with invalid value textfield one and two" line="64">
+<kw name="Open Simple Calculator" owner="calculator">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-20T15:09:43.408844" level="INFO">Switching browser to browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:43.409572" level="INFO">Successfully changed active browser: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<msg time="2025-07-20T15:09:43.409615" level="INFO">Reusing existing browser with id: browser=667f7ab9-5889-4cf3-aae8-06790c1c382c</msg>
+<arg>${BROWSER}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-20T15:09:43.408527" elapsed="0.001118"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-20T15:09:44.314898" level="INFO">Successfully initialized new page object and opened url: https://testpages.eviltester.com/styled/calculator</msg>
+<msg time="2025-07-20T15:09:44.314998" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-20T15:09:43.409726" elapsed="0.905426"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:43.408276" elapsed="0.907003"/>
+</kw>
+<kw name="Input an invalid value in textfield one" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:44.340950" level="INFO">Waited for Element with selector xpath=//form//input[@id='number1'] at state visible</msg>
+<arg>${textfield_one}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:44.316291" elapsed="0.024827"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:44.341828" level="INFO">Fills the text 'abc_123' in the given field.</msg>
+<arg>${textfield_one}</arg>
+<arg>abc_123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:44.341299" elapsed="0.006271"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:44.315574" elapsed="0.032105"/>
+</kw>
+<kw name="Input an invalid value in textfield two" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:44.351207" level="INFO">Waited for Element with selector xpath=//form//input[@id='number1'] at state visible</msg>
+<arg>${textfield_one}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:44.348192" elapsed="0.003142"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-20T15:09:44.351963" level="INFO">Fills the text 'kyc_1' in the given field.</msg>
+<arg>${textfield_one}</arg>
+<arg>kyc_1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:44.351487" elapsed="0.005233"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:44.347896" elapsed="0.008919"/>
+</kw>
+<kw name="Click Calculate button" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:44.359838" level="INFO">Waited for Element with selector xpath=//input[@id='calculate'] at state visible</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:44.357233" elapsed="0.002684"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-20T15:09:44.360300" level="INFO">Clicks the element 'xpath=//input[@id='calculate']'.</msg>
+<arg>${calculate_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:44.360015" elapsed="0.275440"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:44.356996" elapsed="0.278684"/>
+</kw>
+<kw name="Validate Result" owner="calculator">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-20T15:09:45.950370" level="INFO">Waited for Element with selector xpath=//span[@id='answer'] at state visible</msg>
+<arg>${result}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-07-20T15:09:44.636837" elapsed="1.313902"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-20T15:09:45.977406" level="INFO">Text: 'ERR'</msg>
+<msg time="2025-07-20T15:09:45.977753" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>${result}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-20T15:09:45.951060" elapsed="0.026737"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-20T15:09:45.978526" level="INFO">${text} = ERR</msg>
+<var>${text}</var>
+<arg>"${text}".strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-20T15:09:45.978088" elapsed="0.000473"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${answer}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-07-20T15:09:45.978693" elapsed="0.000209"/>
+</kw>
+<arg>ERR</arg>
+<status status="PASS" start="2025-07-20T15:09:44.636109" elapsed="1.342867"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:46.060247" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-8.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-8.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-20T15:09:45.979204" elapsed="0.081152"/>
+</kw>
+<msg time="2025-07-20T15:09:46.065920" level="INFO">Switching context to context=89225daa-693b-4a93-b36c-db8f4bd4760e in CURRENT</msg>
+<msg time="2025-07-20T15:09:46.068179" level="INFO">Successfully changed active context: context=89225daa-693b-4a93-b36c-db8f4bd4760e</msg>
+<msg time="2025-07-20T15:09:46.071393" level="INFO">Successfully closed Context</msg>
+<doc>User Calculate with invalid value in the textfield 1 and 2</doc>
+<status status="PASS" start="2025-07-20T15:09:43.406907" elapsed="2.653542"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-20T15:09:46.086451" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-20T15:09:46.071933" elapsed="0.014628"/>
+</kw>
+<status status="PASS" start="2025-07-20T15:09:27.390452" elapsed="18.696163"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Simple Calculator" id="s1" pass="8" fail="0" skip="0">Simple Calculator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
